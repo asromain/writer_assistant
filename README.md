@@ -1,6 +1,6 @@
 # Projet : Writer assistant
 
-Assistant d’écriture de livre, qui doit permettre a un utilisateur (administrateur), de créer et naviguer dans les enregistrements suivant:
+Assistant d’écriture de livre, qui doit permettre a un utilisateur (administrateur), de créer et naviguer dans les enregistrements suivants :
 
 - Chapitre : numérote (l’ordre est important), il comporte un titre, et se compose de scènes et d’anecdotes.
 
