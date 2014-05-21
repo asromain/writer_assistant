@@ -1,42 +1,29 @@
 require 'spec_helper'
+include ApplicationHelper
 
-describe "StaticPages" do
+describe "Static pages" do
+
+	subject { page }
 
 	describe "Home page" do
-		it "devrait avoir contenu 'Writer Assitant'" do
-			visit '/static_pages/home'
-			expect(page).to have_content('Writer Assistant')
-		end
-		it "devrait avoir un titre 'Home'" do
-			visit '/static_pages/home'
-			expect(page).to have_title("Writer Assistant")
-		end
-		it "devrait pas avoir '| Home'" do
-			visit '/static_pages/home'
-			expect(page).not_to have_title('| Home')
-		end
+		before { visit root_path }
+
+		it { should have_content('Writer Assistant') }
+		it { should have_title(full_title('')) }
+		it { should_not have_title('| Home') }
 	end
 
 	describe "Help page" do
-		it "devrait avoir contenu 'Help'" do
-			visit '/static_pages/help'
-			expect(page).to have_content('Help')
-		end
-		it "devrait avoir un titre 'Help'" do
-			visit '/static_pages/help'
-			expect(page).to have_title("Writer Assistant | Help")
-		end
+		before { visit help_path }
+
+		it { should have_content('Help') }
+		it { should have_title(full_title('Help')) }
 	end
 
 	describe "About page" do
-		it "devrait avoir contenu 'About'" do
-			visit '/static_pages/about'
-			expect(page).to have_content('About')
-		end
-		it "devrait avoir un titre 'About'" do
-			visit '/static_pages/about'
-			expect(page).to have_title("Writer Assistant | About")
-		end
-	end
+		before { visit about_path }
 
+		it { should have_content('About') }
+		it { should have_title(full_title('About')) }
+	end
 end

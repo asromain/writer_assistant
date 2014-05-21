@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
+gem 'bootstrap-sass', '2.3.2.0'
 
 group :development do
 	gem 'sqlite3', '1.3.8'
@@ -8,7 +9,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '2.1.0'
+	gem 'capybara', '2.1.0'
 end
 
 gem 'sass-rails', '~> 4.0.0'
