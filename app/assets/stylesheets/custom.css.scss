@@ -1,5 +1,12 @@
 @import "bootstrap";
 
+/* VARIABLES */
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 
 /* STYLE GLOBAL */
 
@@ -62,7 +69,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #BF2026;
+  color: #BA2930;
   text-transform: none;
   letter-spacing: -0.5px;
   padding-top: 9px;
@@ -135,4 +142,31 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+}
+
+
+/* FORMULAIRE */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
 }
