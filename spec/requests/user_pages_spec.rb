@@ -14,7 +14,10 @@ describe "User pages" do
 
 	describe "edit" do
 		let(:user) { FactoryGirl.create(:user) }
-		before { visit edit_user_path(user) }
+	    before do
+      		sign_in user
+      		visit edit_user_path(user)
+	    end
 
 		describe "page" do
 			it { should have_content("Editer le profil") }
@@ -42,6 +45,7 @@ describe "User pages" do
 
 			it { should have_title(new_name) }
 			it { should have_selector('div.alert.alert-success') }
+			it { should have_link('Sign out', href: signout_path) }
 			specify { expect(user.reload.name).to  eq new_name }
 			specify { expect(user.reload.email).to eq new_email }
 		end
