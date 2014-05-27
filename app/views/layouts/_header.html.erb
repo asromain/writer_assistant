@@ -1,14 +1,18 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
 	<div class="navbar-inner">
 		<div class="container">
-			<%= link_to "Writer Assistant", root_path, id: "logo" %>
+			<% if signed_in? %>
+				<%= link_to "Writer Assistant", "#", id: "logo" %>
+			<% else %>
+				<%= link_to "Writer Assistant", root_path, id: "logo" %>
+			<% end %>
 			<nav>
 				<ul class="nav pull-right">
-					<li><%= link_to "Home",    root_path %></li>
-					<li><%= link_to "Help",    help_path %></li>
-					<li><%= link_to "About",   about_path %></li>
 					<% if signed_in? %>
-						<li><%= link_to "Users", '#' %></li>
+						<li><%= link_to "Chapters", '#' %></li>
+						<li><%= link_to "Anecdotes", '#' %></li>
+						<li><%= link_to "Scenes", '#' %></li>
+						<li><%= link_to "Characters", '#' %></li>
 						<li id="fat-menu" class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
 								Account <b class="caret"></b>
@@ -23,6 +27,9 @@
 							</ul>
 						</li>
 					<% else %>
+						<li><%= link_to "Home",    root_path %></li>
+						<li><%= link_to "Help",    help_path %></li>
+						<li><%= link_to "About",   about_path %></li>
 						<li><%= link_to "Sign in", signin_path %></li>
 					<% end %>
 				</ul>
