@@ -2,6 +2,7 @@ class Chapter < ActiveRecord::Base
 
 	# relations
 	has_many :anecdotes, dependent: :destroy
+	has_many :scenes, dependent: :destroy
 
 	# validations numero chapitre
 	validates :number, presence: true

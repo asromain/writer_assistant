@@ -25,10 +25,5 @@ describe Character do
 			before { @character.role = nil }
 			it { should_not be_valid } 
 		end
-
-		describe "scene_id" do
-			before { @character.scene_id = nil }
-			it { should_not be_valid } 
-		end
 	end
 end

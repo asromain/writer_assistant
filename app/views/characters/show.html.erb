@@ -12,7 +12,20 @@
 
 <p>
   <strong>Scene:</strong>
-  <%= @character.scene_id %>
+  <% if (@character.scene_id.blank?) then %>
+  	Nil
+  <% else %>
+  	<%= @character.scene_id %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Scene name:</strong>
+  <% if (@character.scene_id.blank?) then %>
+  	Nil
+  <% else %>
+  	<%= link_to @character.scene.name, @character.scene %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_character_path(@character) %> |

@@ -7,7 +7,20 @@
 
 <p>
   <strong>Anecdote:</strong>
-  <%= @theme.anecdote_id %>
+  <% if (@theme.anecdote_id.blank?) then %>
+  	Nil
+  <% else %>
+  	<%= @theme.anecdote_id %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Anecdote subject:</strong>
+  <% if (@theme.anecdote_id.blank?) then %>
+  	Nil
+  <% else %>
+  	<%= link_to @theme.anecdote.subject, @theme.anecdote %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_theme_path(@theme) %> |

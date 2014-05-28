@@ -10,7 +10,4 @@ class Character < ActiveRecord::Base
 	# validations role
 	validates :role, presence: true
 
-	# validations chapter_id
-	validates :scene_id, presence: true
-
 end

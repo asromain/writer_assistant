@@ -2,6 +2,7 @@ class Anecdote < ActiveRecord::Base
 
 	# relations
 	belongs_to :chapter
+	has_many :themes, dependent: :destroy
 
 	# validations subject 
 	validates :subject, presence: true

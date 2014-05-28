@@ -25,5 +25,19 @@
   <%= @scene.chapter_id %>
 </p>
 
+<p>
+  <strong>Chapter title:</strong>
+  <%= link_to @scene.chapter.title, @scene.chapter %>
+</p>
+
+<p>
+  <strong>Characters:</strong>
+  <ul>
+    <%- @scene.characters.each do |character|  %>
+      <li><%= link_to character.name, character %></li>
+    <%- end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_scene_path(@scene) %> |
 <%= link_to 'Back', scenes_path %>

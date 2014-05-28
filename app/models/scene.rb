@@ -2,6 +2,7 @@ class Scene < ActiveRecord::Base
 
 	# relations
 	belongs_to :chapter
+	has_many :characters, dependent: :nullify
 
 	# validations name 
 	validates :name, presence: true
