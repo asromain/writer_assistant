@@ -1,5 +1,7 @@
 WriterAssistant::Application.routes.draw do
   
+  resources :chapters
+
 	resources :users
 	resources :sessions, only: [:new, :create, :destroy]
 	
