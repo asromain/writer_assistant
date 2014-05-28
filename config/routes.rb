@@ -1,5 +1,7 @@
 WriterAssistant::Application.routes.draw do
   
+  resources :themes
+
   resources :scenes
 
   resources :anecdotes
