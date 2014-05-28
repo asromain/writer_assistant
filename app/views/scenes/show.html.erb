@@ -1,43 +1,53 @@
-<p id="notice"><%= notice %></p>
+<h1>Aperçu de : <%= @scene.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @scene.name %>
+<div class="contenu">
+
+  <h2><%= @scene.name %></h2>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @scene.name %>
+  </p>
+
+  <p>
+    <strong>Narrative:</strong>
+    <%= @scene.narrative %>
+  </p>
+
+  <p>
+    <strong>Place:</strong>
+    <%= @scene.place %>
+  </p>
+
+  <p>
+    <strong>Period:</strong>
+    <%= @scene.period %>
+  </p>
+
+  <p>
+    <strong>Chapter:</strong>
+    <%= @scene.chapter_id %>
+  </p>
+
+  <p>
+    <strong>Chapter title:</strong>
+    <%= link_to @scene.chapter.title, @scene.chapter %>
+  </p>
+
+  <p>
+    <strong>Characters:</strong>
+    <ul>
+      <%- @scene.characters.each do |character|  %>
+        <li><%= link_to character.name, character %></li>
+      <%- end %>
+    </ul>
+  </p>
+
+</div>
+
+<p class="action">
+
+  <%= link_to 'Edit', edit_scene_path(@scene) %> |
+  <%= link_to 'Back', scenes_path %>
+
 </p>
-
-<p>
-  <strong>Narrative:</strong>
-  <%= @scene.narrative %>
-</p>
-
-<p>
-  <strong>Place:</strong>
-  <%= @scene.place %>
-</p>
-
-<p>
-  <strong>Period:</strong>
-  <%= @scene.period %>
-</p>
-
-<p>
-  <strong>Chapter:</strong>
-  <%= @scene.chapter_id %>
-</p>
-
-<p>
-  <strong>Chapter title:</strong>
-  <%= link_to @scene.chapter.title, @scene.chapter %>
-</p>
-
-<p>
-  <strong>Characters:</strong>
-  <ul>
-    <%- @scene.characters.each do |character|  %>
-      <li><%= link_to character.name, character %></li>
-    <%- end %>
-  </ul>
-</p>
-
-<%= link_to 'Edit', edit_scene_path(@scene) %> |
-<%= link_to 'Back', scenes_path %>

@@ -1,40 +1,47 @@
-<p id="notice"><%= notice %></p>
+<h1>Aperçu de : <%= @chapter.title %></h1>
 
-<p>
-  <strong>Number:</strong>
-  <%= @chapter.number %>
+<div class="contenu">
+
+<h2><%= @chapter.title %></h2>
+
+	<p>
+	  <strong>Number:</strong>
+	  <%= @chapter.number %>
+	</p>
+
+	<p>
+	  <strong>Title:</strong>
+	  <%= @chapter.title %>
+	</p>
+
+	<p>
+		<strong>Anecdotes:</strong>
+		<% if (@chapter.anecdotes.blank?) then %>
+			Nil 
+		<% else %>
+			<ul>
+				<%- @chapter.anecdotes.each do |anecdote|  %>
+					<li><%= link_to anecdote.subject, anecdote %></li>
+				<%- end %>
+			</ul>
+		<% end %>
+	</p>
+
+	<p>
+		<strong>Scenes:</strong>
+		<% if (@chapter.scenes.blank?) then %>
+			Nil 
+		<% else %>
+			<ul>
+				<%- @chapter.scenes.each do |scene|  %>
+					<li><%= link_to scene.place, scene %></li>
+				<%- end %>
+			</ul>
+		<% end %>
+	</p>
+</div>
+
+<p class="action">
+	<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
+	<%= link_to 'Back', chapters_path %>
 </p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @chapter.title %>
-</p>
-
-<p>
-	<strong>Anecdotes:</strong>
-	<% if (@chapter.anecdotes.blank?) then %>
-		Nil 
-	<% else %>
-		<ul>
-			<%- @chapter.anecdotes.each do |anecdote|  %>
-				<li><%= link_to anecdote.subject, anecdote %></li>
-			<%- end %>
-		</ul>
-	<% end %>
-</p>
-
-<p>
-	<strong>Scenes:</strong>
-	<% if (@chapter.scenes.blank?) then %>
-		Nil 
-	<% else %>
-		<ul>
-			<%- @chapter.scenes.each do |scene|  %>
-				<li><%= link_to scene.place, scene %></li>
-			<%- end %>
-		</ul>
-	<% end %>
-</p>
-
-<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
-<%= link_to 'Back', chapters_path %>

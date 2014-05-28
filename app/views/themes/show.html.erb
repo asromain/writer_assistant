@@ -1,27 +1,37 @@
-<p id="notice"><%= notice %></p>
+<h1>Aperçu de : <%= @theme.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @theme.name %>
+<div class="contenu">
+
+  <h2><%= @theme.name %></h2>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @theme.name %>
+  </p>
+
+  <p>
+    <strong>Anecdote:</strong>
+    <% if (@theme.anecdote_id.blank?) then %>
+    	Nil
+    <% else %>
+    	<%= @theme.anecdote_id %>
+    <% end %>
+  </p>
+
+  <p>
+    <strong>Anecdote subject:</strong>
+    <% if (@theme.anecdote_id.blank?) then %>
+    	Nil
+    <% else %>
+    	<%= link_to @theme.anecdote.subject, @theme.anecdote %>
+    <% end %>
+  </p>
+
+</div>
+
+<p class="action">
+
+  <%= link_to 'Edit', edit_theme_path(@theme) %> |
+  <%= link_to 'Back', themes_path %>
+
 </p>
-
-<p>
-  <strong>Anecdote:</strong>
-  <% if (@theme.anecdote_id.blank?) then %>
-  	Nil
-  <% else %>
-  	<%= @theme.anecdote_id %>
-  <% end %>
-</p>
-
-<p>
-  <strong>Anecdote subject:</strong>
-  <% if (@theme.anecdote_id.blank?) then %>
-  	Nil
-  <% else %>
-  	<%= link_to @theme.anecdote.subject, @theme.anecdote %>
-  <% end %>
-</p>
-
-<%= link_to 'Edit', edit_theme_path(@theme) %> |
-<%= link_to 'Back', themes_path %>

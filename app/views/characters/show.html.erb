@@ -1,32 +1,42 @@
-<p id="notice"><%= notice %></p>
+<h1>Aperçu de : <%= @character.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @character.name %>
+<div class="contenu">
+
+  <h2><%= @character.name %></h2>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @character.name %>
+  </p>
+
+  <p>
+    <strong>Role:</strong>
+    <%= @character.role %>
+  </p>
+
+  <p>
+    <strong>Scene:</strong>
+    <% if (@character.scene_id.blank?) then %>
+    	Nil
+    <% else %>
+    	<%= @character.scene_id %>
+    <% end %>
+  </p>
+
+  <p>
+    <strong>Scene name:</strong>
+    <% if (@character.scene_id.blank?) then %>
+    	Nil
+    <% else %>
+    	<%= link_to @character.scene.name, @character.scene %>
+    <% end %>
+  </p>
+
+</div>
+
+<p class="action">
+
+  <%= link_to 'Edit', edit_character_path(@character) %> |
+  <%= link_to 'Back', characters_path %>
+
 </p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @character.role %>
-</p>
-
-<p>
-  <strong>Scene:</strong>
-  <% if (@character.scene_id.blank?) then %>
-  	Nil
-  <% else %>
-  	<%= @character.scene_id %>
-  <% end %>
-</p>
-
-<p>
-  <strong>Scene name:</strong>
-  <% if (@character.scene_id.blank?) then %>
-  	Nil
-  <% else %>
-  	<%= link_to @character.scene.name, @character.scene %>
-  <% end %>
-</p>
-
-<%= link_to 'Edit', edit_character_path(@character) %> |
-<%= link_to 'Back', characters_path %>
