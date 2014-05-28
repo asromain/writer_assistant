@@ -15,10 +15,9 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div><br>
-  <div class="field">
-    <%= f.label :anecdote_id %>
-    <%= f.number_field :anecdote_id %>
-  </div>
+
+  <%= f.select :anecdote_id, @anecdotes.map{ |c| [c.subject, c.id] }  %>
+
   <br/>
   <%= f.submit "Create theme", class: "btn btn-large btn-primary" %>
 <% end %>

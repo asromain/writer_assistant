@@ -9,3 +9,22 @@ Assistant d’écriture de livre, qui doit permettre a un utilisateur (administr
 - Scène : un recit (texte) qui implique un ou plusieurs personnages dans un lieu et un instant ou une periode.
 
 - Personne : peut apparaître dans une ou plusieurs scenes.
+
+
+=========================================
+
+# Explication de l'application : 
+
+
+J'ai créé un modèle user qui sera admin. On doit créer l'utilisateur via rails console.
+
+$ rake db:migrate
+$ rake test:prepare
+
+$ rails c (par exemple ci-dessous) :
+
+$ User.create!(name:"Romain Palmero", email:"mail@mail.com", password:"111111", password_confirmation:"111111")
+
+Il doit se connecter pour accéder aux différentes pages de créations de chapitres, anecdotes, scenes, themes, et personnages.
+
+Après l'ajout d'informations dans la base de donnée, ces dernières sont listées dans des tableaux. L'action show permet de voir toutes les autres dépendances : par exemple pour un chapitre permettre de lister ses anecdotes et scenes correspondantes. L'action edit permet d'éditer les différentes données enregistrées et destroy permet de les effacer.

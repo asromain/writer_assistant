@@ -19,10 +19,9 @@
     <%= f.label :role %>
     <%= f.text_field :role %>
   </div><br>
-  <div class="field">
-    <%= f.label :scene_id %>
-    <%= f.number_field :scene_id %>
-  </div>
+
+  <%= f.select :scene_id, @scenes.map{ |c| [c.name, c.id] }  %>
+
   <br/>
   <%= f.submit "Create character", class: "btn btn-large btn-primary" %>
 <% end %>

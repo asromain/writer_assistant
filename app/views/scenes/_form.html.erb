@@ -15,22 +15,24 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div><br>
+
   <div class="field">
     <%= f.label :narrative %>
     <%= f.text_area :narrative %>
   </div><br>
+
   <div class="field">
     <%= f.label :place %>
     <%= f.text_field :place %>
   </div><br>
+
   <div class="field">
     <%= f.label :period %>
     <%= f.text_field :period %>
   </div><br>
-  <div class="field">
-    <%= f.label :chapter_id %>
-    <%= f.number_field :chapter_id %>
-  </div>
+
+  <%= f.select :chapter_id, @chapters.map{ |c| [c.title, c.id] }  %>
+
   <br/>
   <%= f.submit "Create scene", class: "btn btn-large btn-primary" %>
 <% end %>

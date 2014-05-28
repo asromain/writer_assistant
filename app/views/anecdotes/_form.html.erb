@@ -19,10 +19,9 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div><br>
-  <div class="field">
-    <%= f.label :chapter_id %>
-    <%= f.number_field :chapter_id %>
-  </div>
+
+  <%= f.select :chapter_id, @chapters.map{ |c| [c.title, c.id] }  %>
+
   <br/>
   <%= f.submit "Create anecdote", class: "btn btn-large btn-primary" %>
 <% end %>
