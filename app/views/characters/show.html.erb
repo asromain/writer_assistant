@@ -11,7 +11,7 @@
 
   <p>
     <strong>Role:</strong>
-    <% if (@character.scene_id.blank?) then %>
+    <% if (@character.role.blank?) then %>
       Nil
     <% else %>
       <%= @character.role %>

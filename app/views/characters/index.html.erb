@@ -1,14 +1,18 @@
 <h1>Listing characters</h1>
 
 <div class="contenu">
-  <h2>List of unused characters.</h2>
-  <ul>  
-    <%- @characters.each do |character| %>
-      <% if (character.scene_id.blank?) then %>
-        <li><%= character.name %></li>
-      <% end %>
-    <%- end %>
-  </ul>
+  <% if (@characters.blank?) then %>
+    <h2>No character for now</h2>
+  <% else %>
+    <h2>List of unused characters.</h2>
+    <ul>  
+      <%- @characters.each do |character| %>
+        <% if (character.scene_id.blank?) then %>
+          <li><%= character.name %></li>
+        <% end %>
+      <%- end %>
+    </ul>
+  <% end %>
 </div>
 
 <h2> Pour plus d'informations sur les personnages, cliquer sur l'action "Show" ci dessous.</h2>

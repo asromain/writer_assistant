@@ -16,7 +16,7 @@
 
   <p>
     <strong>Place:</strong>
-    <% if (@scene.chapter_id.blank?) then %>
+    <% if (@scene.place.blank?) then %>
       Nil
     <% else %>
       <%= @scene.place %>
@@ -25,7 +25,7 @@
 
   <p>
     <strong>Period:</strong>
-    <% if (@scene.chapter_id.blank?) then %>
+    <% if (@scene.period.blank?) then %>
       Nil
     <% else %>
       <%= @scene.period %>

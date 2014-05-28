@@ -1,8 +1,12 @@
 <div class="contenu">
-  <h2>List of anecdotes available</h2>
-  <ul>  
-    <%- @anecdotes.each do |anecdote| %>
-      <li>N°<%= anecdote.id %> : <%= anecdote.subject %></li>
-    <%- end %>
-  </ul>
+	<% if (@anecdotes.blank?) then %>
+		<h2>No anecdote for now</h2>
+	<% else %>
+	  <h2>List of anecdotes available</h2>
+	  <ul>  
+	    <%- @anecdotes.each do |anecdote| %>
+	      <li>N°<%= anecdote.id %> : <%= anecdote.subject %></li>
+	    <%- end %>
+	  </ul>
+	 <% end %>
 </div>
