@@ -5,7 +5,7 @@ class Scene < ActiveRecord::Base
 	has_many :characters, dependent: :nullify
 
 	# validations name 
-	validates :name, presence: true
+	validates :name, presence: true, uniqueness: { case_sensitive: false }
 	validates_uniqueness_of :name
 
 	# validations narrative
@@ -13,7 +13,10 @@ class Scene < ActiveRecord::Base
 	validates_length_of :narrative, minimum: 30, message: "doit faire minimum 30 caracteres"
 
 	# validations period
-	validates :period, presence: true
+	# validates :period, presence: true
+
+	# validations place 
+	# validates :place, presence: true
 
 	# validations chapter_id
 	# validates :chapter_id, presence: true

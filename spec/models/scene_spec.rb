@@ -27,10 +27,15 @@ describe Scene do
 			it { should_not be_valid } 
 		end
 
-		describe "period" do
-			before { @scene.period = nil }
-			it { should_not be_valid } 
-		end
+		# describe "period" do
+		# 	before { @scene.period = nil }
+		# 	it { should_not be_valid } 
+		# end
+
+		# describe "place" do
+		# 	before { @scene.place = nil }
+		# 	it { should_not be_valid } 
+		# end
 
 		# describe "chapter_id" do
 		# 	before { @scene.chapter_id = nil }

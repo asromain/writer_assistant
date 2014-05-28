@@ -16,21 +16,33 @@
 
   <p>
     <strong>Chapter:</strong>
-    <%= @anecdote.chapter_id %>
+    <% if (@anecdote.chapter_id.blank?) then %>
+      Nil
+    <% else %>
+      <%= @anecdote.chapter_id %>
+    <% end %>
   </p>
 
   <p>
     <strong>Chapter title:</strong>
-    <%= link_to @anecdote.chapter.title, @anecdote.chapter %>
+    <% if (@anecdote.chapter_id.blank?) then %>
+      Nil
+    <% else %>
+      <%= link_to @anecdote.chapter.title, @anecdote.chapter %>
+    <% end %>
   </p>
 
   <p>
     <strong>Themes:</strong>
-    <ul>
-    	<%- @anecdote.themes.each do |theme|  %>
-    		<li><%= link_to theme.name, theme %></li>
-    	<%- end %>
-    </ul>
+    <% if (@anecdote.themes.blank?) then %>
+      Nil
+    <% else %>
+      <ul>
+      	<%- @anecdote.themes.each do |theme|  %>
+      		<li><%= link_to theme.name, theme %></li>
+      	<%- end %>
+      </ul>
+    <% end %>
   </p>
 </div>
 

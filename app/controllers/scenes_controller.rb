@@ -28,6 +28,7 @@ class ScenesController < ApplicationController
   # POST /scenes.json
   def create
     @scene = Scene.new(scene_params)
+    @chapters = Chapter.all
 
     respond_to do |format|
       if @scene.save

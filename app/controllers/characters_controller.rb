@@ -22,12 +22,14 @@ class CharactersController < ApplicationController
 
   # GET /characters/1/edit
   def edit
+    @scenes = Scene.all
   end
 
   # POST /characters
   # POST /characters.json
   def create
     @character = Character.new(character_params)
+    @scenes = Scene.all
 
     respond_to do |format|
       if @character.save

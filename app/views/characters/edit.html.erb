@@ -1,6 +1,10 @@
 <h1>Editing character</h1>
 
+<%= render 'scene' %>
+
 <%= render 'form' %>
 
-<%= link_to 'Show', @character %> |
-<%= link_to 'Back', characters_path %>
+<p class="action">
+	<%= link_to 'Show', @character %> |
+	<%= link_to 'Back', characters_path %>
+</p>

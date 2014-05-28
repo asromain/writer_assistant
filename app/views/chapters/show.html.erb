@@ -34,7 +34,7 @@
 		<% else %>
 			<ul>
 				<%- @chapter.scenes.each do |scene|  %>
-					<li><%= link_to scene.place, scene %></li>
+					<li><%= link_to scene.name, scene %></li>
 				<%- end %>
 			</ul>
 		<% end %>

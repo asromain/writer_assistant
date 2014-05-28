@@ -28,6 +28,7 @@ class ThemesController < ApplicationController
   # POST /themes.json
   def create
     @theme = Theme.new(theme_params)
+    @anecdotes = Anecdote.all
 
     respond_to do |format|
       if @theme.save

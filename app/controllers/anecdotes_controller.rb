@@ -6,7 +6,7 @@ class AnecdotesController < ApplicationController
   def index
     @anecdotes = Anecdote
     @anecdotes = Anecdote.order(params[:sort]) if params[:sort]
-    @anecdotes = Anecdote.all
+    @anecdotes = @anecdotes.all
   end
 
   # GET /anecdotes/1
@@ -28,6 +28,7 @@ class AnecdotesController < ApplicationController
   # POST /anecdotes.json
   def create
     @anecdote = Anecdote.new(anecdote_params)
+    @chapters = Chapter.all
 
     respond_to do |format|
       if @anecdote.save

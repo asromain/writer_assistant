@@ -28,6 +28,7 @@ class ChaptersController < ApplicationController
   # POST /chapters.json
   def create
     @chapter = Chapter.new(chapter_params)
+    @chapters = Chapter.all
 
     respond_to do |format|
       if @chapter.save

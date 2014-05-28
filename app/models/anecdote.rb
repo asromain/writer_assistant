@@ -5,7 +5,7 @@ class Anecdote < ActiveRecord::Base
 	has_many :themes, dependent: :destroy
 
 	# validations subject 
-	validates :subject, presence: true
+	validates :subject, presence: true, uniqueness: { case_sensitive: false }
 	validates_uniqueness_of :subject
 
 	# validations description

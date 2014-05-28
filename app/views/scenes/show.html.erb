@@ -16,31 +16,51 @@
 
   <p>
     <strong>Place:</strong>
-    <%= @scene.place %>
+    <% if (@scene.chapter_id.blank?) then %>
+      Nil
+    <% else %>
+      <%= @scene.place %>
+    <% end %>
   </p>
 
   <p>
     <strong>Period:</strong>
-    <%= @scene.period %>
+    <% if (@scene.chapter_id.blank?) then %>
+      Nil
+    <% else %>
+      <%= @scene.period %>
+    <% end %>
   </p>
 
   <p>
     <strong>Chapter:</strong>
-    <%= @scene.chapter_id %>
+    <% if (@scene.chapter_id.blank?) then %>
+      Nil
+    <% else %>
+      <%= @scene.chapter_id %>
+    <% end %>
   </p>
 
   <p>
     <strong>Chapter title:</strong>
-    <%= link_to @scene.chapter.title, @scene.chapter %>
+    <% if (@scene.chapter_id.blank?) then %>
+      Nil
+    <% else %>
+      <%= link_to @scene.chapter.title, @scene.chapter %>
+    <% end %>
   </p>
 
   <p>
     <strong>Characters:</strong>
-    <ul>
-      <%- @scene.characters.each do |character|  %>
-        <li><%= link_to character.name, character %></li>
-      <%- end %>
-    </ul>
+    <% if (@scene.chapter_id.blank?) then %>
+      Nil
+    <% else %>
+      <ul>
+        <%- @scene.characters.each do |character|  %>
+          <li><%= link_to character.name, character %></li>
+        <%- end %>
+      </ul>
+    <% end %>
   </p>
 
 </div>
