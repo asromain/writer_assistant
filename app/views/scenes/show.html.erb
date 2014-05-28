@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @scene.name %>
+</p>
+
+<p>
+  <strong>Narrative:</strong>
+  <%= @scene.narrative %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @scene.place %>
+</p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @scene.period %>
+</p>
+
+<p>
+  <strong>Chapter:</strong>
+  <%= @scene.chapter_id %>
+</p>
+
+<%= link_to 'Edit', edit_scene_path(@scene) %> |
+<%= link_to 'Back', scenes_path %>

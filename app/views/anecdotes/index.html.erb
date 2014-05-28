@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
+      <th>Id <%= link_to "(sort)", anecdotes_path(sort: "id") %></th>
       <th>Subject <%= link_to "(sort)", anecdotes_path(sort: "subject") %></th>
       <th>Description</th>
       <th>Chapter</th>

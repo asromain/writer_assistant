@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr class="entete">
-      <th>Id</th>
+      <th>Id <%= link_to "(sort)", chapters_path(sort: "id") %></th>
       <th>Number <%= link_to "(sort)", chapters_path(sort: "number") %></th>   <!-- Pour permettre le tri-->
       <th>Title <%= link_to "(sort)", chapters_path(sort: "title") %></th>
       <th></th>

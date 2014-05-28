@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528135323) do
+ActiveRecord::Schema.define(version: 20140528140739) do
 
   create_table "anecdotes", force: true do |t|
     t.string   "subject"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20140528135323) do
   create_table "chapters", force: true do |t|
     t.integer  "number"
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scenes", force: true do |t|
+    t.string   "name"
+    t.text     "narrative"
+    t.string   "place"
+    t.string   "period"
+    t.integer  "chapter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
