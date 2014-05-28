@@ -1,0 +1,33 @@
+<h1>Listing anecdotes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Subject <%= link_to "(sort)", anecdotes_path(sort: "subject") %></th>
+      <th>Description</th>
+      <th>Chapter</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @anecdotes.each do |anecdote| %>
+      <tr>
+        <td><%= anecdote.id %></td>
+        <td><%= anecdote.subject %></td>
+        <td><%= anecdote.description %></td>
+        <td><%= anecdote.chapter_id %></td>
+        <td><%= link_to 'Show', anecdote %></td>
+        <td><%= link_to 'Edit', edit_anecdote_path(anecdote) %></td>
+        <td><%= link_to 'Destroy', anecdote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Anecdote', new_anecdote_path %>
