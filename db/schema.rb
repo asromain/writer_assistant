@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528142926) do
+ActiveRecord::Schema.define(version: 20140528144442) do
 
   create_table "anecdotes", force: true do |t|
     t.string   "subject"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20140528142926) do
   create_table "chapters", force: true do |t|
     t.integer  "number"
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "characters", force: true do |t|
+    t.string   "name"
+    t.string   "role"
+    t.integer  "scene_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

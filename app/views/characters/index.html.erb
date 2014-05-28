@@ -1,0 +1,33 @@
+<h1>Listing characters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id <%= link_to "(sort)", characters_path(sort: "id") %></th>
+      <th>Name <%= link_to "(sort)", characters_path(sort: "name") %></th>
+      <th>Role</th>
+      <th>Scene <%= link_to "(sort)", characters_path(sort: "scene_id") %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @characters.each do |character| %>
+      <tr>
+        <td><%= character.id %></td>
+        <td><%= character.name %></td>
+        <td><%= character.role %></td>
+        <td><%= character.scene_id %></td>
+        <td><%= link_to 'Show', character %></td>
+        <td><%= link_to 'Edit', edit_character_path(character) %></td>
+        <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Character', new_character_path %>
