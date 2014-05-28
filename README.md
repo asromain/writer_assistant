@@ -11,19 +11,20 @@ Assistant d’écriture de livre, qui doit permettre a un utilisateur (administr
 - Personne : peut apparaître dans une ou plusieurs scenes.
 
 
-=========================================
 
-# Explication de l'application : 
+
+# Explications de l'application : 
 
 
 J'ai créé un modèle user qui sera admin. On doit créer l'utilisateur via rails console.
 
-$ rake db:migrate
-$ rake test:prepare
+- rake db:migrate
 
-$ rails c (par exemple ci-dessous) :
+- rake test:prepare
 
-$ User.create!(name:"Romain Palmero", email:"mail@mail.com", password:"111111", password_confirmation:"111111")
+- rails c (par exemple ci-dessous) :
+
+- User.create!(name:"Bobby", email:"bobby@mail.com", password:"111111", password_confirmation:"111111")
 
 Il doit se connecter pour accéder aux différentes pages de créations de chapitres, anecdotes, scenes, themes, et personnages.
 

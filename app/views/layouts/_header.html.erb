@@ -2,7 +2,7 @@
 	<div class="navbar-inner">
 		<div class="container">
 			<% if signed_in? %>
-				<%= link_to "Writer Assistant", "#", id: "logo" %>
+				<%= link_to "Writer Assistant", chapters_path, id: "logo" %>
 			<% else %>
 				<%= link_to "Writer Assistant", root_path, id: "logo" %>
 			<% end %>
