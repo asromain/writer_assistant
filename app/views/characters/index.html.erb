@@ -1,7 +1,17 @@
 <h1>Listing characters</h1>
 
-<h2> Pour plus d'informations sur les personnages, cliquer sur l'action "Show" ci dessous.</h2>
+<div class="contenu">
+  <h2>List of unused characters.</h2>
+  <ul>  
+    <%- @characters.each do |character| %>
+      <% if (character.scene_id.blank?) then %>
+        <li><%= character.name %></li>
+      <% end %>
+    <%- end %>
+  </ul>
+</div>
 
+<h2> Pour plus d'informations sur les personnages, cliquer sur l'action "Show" ci dessous.</h2>
 
 <table>
   <thead>
@@ -33,4 +43,6 @@
 
 <br>
 
-<%= link_to 'New Character', new_character_path %>
+<p class="action">
+  <%= link_to 'New Character', new_character_path %>
+</p>

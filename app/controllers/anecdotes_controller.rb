@@ -17,6 +17,7 @@ class AnecdotesController < ApplicationController
   # GET /anecdotes/new
   def new
     @anecdote = Anecdote.new
+    @chapters = Chapter.all
   end
 
   # GET /anecdotes/1/edit

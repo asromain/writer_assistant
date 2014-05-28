@@ -12,18 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </div>
+  </div><br>
   <div class="field">
-    <%= f.label :role %><br>
+    <%= f.label :role %>
     <%= f.text_field :role %>
-  </div>
+  </div><br>
   <div class="field">
-    <%= f.label :scene_id %><br>
+    <%= f.label :scene_id %>
     <%= f.number_field :scene_id %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <br/>
+  <%= f.submit "Create character", class: "btn btn-large btn-primary" %>
 <% end %>

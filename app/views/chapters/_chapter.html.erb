@@ -1,0 +1,8 @@
+<div class="contenu">
+  <h2>List of exisiting chapters, don't use the same.</h2>
+  <ul>  
+    <%- @chapters.each do |chapter| %>
+      <li>N°<%= chapter.id %> : <%= chapter.title %></li>
+    <%- end %>
+  </ul>
+</div>

@@ -16,6 +16,6 @@ class Scene < ActiveRecord::Base
 	validates :period, presence: true
 
 	# validations chapter_id
-	validates :chapter_id, presence: true
+	# validates :chapter_id, presence: true
 
 end

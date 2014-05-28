@@ -17,6 +17,7 @@ class ScenesController < ApplicationController
   # GET /scenes/new
   def new
     @scene = Scene.new
+    @chapters = Chapter.all
   end
 
   # GET /scenes/1/edit

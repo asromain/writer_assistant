@@ -1,0 +1,8 @@
+<div class="contenu">
+  <h2>List of anecdotes available</h2>
+  <ul>  
+    <%- @anecdotes.each do |anecdote| %>
+      <li>N°<%= anecdote.id %> : <%= anecdote.subject %></li>
+    <%- end %>
+  </ul>
+</div>

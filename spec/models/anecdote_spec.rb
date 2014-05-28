@@ -26,9 +26,9 @@ describe Anecdote do
 			it { should_not be_valid } 
 		end
 
-		describe "chapter_id" do
-			before { @anecdote.chapter_id = nil }
-			it { should_not be_valid } 
-		end
+		# describe "chapter_id" do
+		# 	before { @anecdote.chapter_id = nil }
+		# 	it { should_not be_valid } 
+		# end
 	end
 end

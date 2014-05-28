@@ -12,14 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :number %><br>
+    <%= f.label :number %>
     <%= f.number_field :number %>
-  </div>
+  </div><br>
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title %>
     <%= f.text_field :title %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </div> <br/>
+  <%= f.submit "Create chapter", class: "btn btn-large btn-primary" %>
 <% end %>

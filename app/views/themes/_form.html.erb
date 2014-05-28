@@ -12,14 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </div>
+  </div><br>
   <div class="field">
-    <%= f.label :anecdote_id %><br>
+    <%= f.label :anecdote_id %>
     <%= f.number_field :anecdote_id %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <br/>
+  <%= f.submit "Create theme", class: "btn btn-large btn-primary" %>
 <% end %>

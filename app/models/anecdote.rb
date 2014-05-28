@@ -13,6 +13,6 @@ class Anecdote < ActiveRecord::Base
 	validates_length_of :description, minimum: 10, message: "doit faire minimum 10 caracteres"
 
 	# validations chapter_id
-	validates :chapter_id, presence: true
+	# validates :chapter_id, presence: true
 
 end

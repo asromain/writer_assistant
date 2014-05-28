@@ -17,6 +17,7 @@ class ChaptersController < ApplicationController
   # GET /chapters/new
   def new
     @chapter = Chapter.new
+    @chapters = Chapter.all
   end
 
   # GET /chapters/1/edit

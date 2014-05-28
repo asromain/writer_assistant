@@ -8,6 +8,6 @@ class Character < ActiveRecord::Base
 	validates_uniqueness_of :name
 
 	# validations role
-	validates :role, presence: true
+	# validates :role, presence: true
 
 end

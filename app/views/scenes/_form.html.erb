@@ -12,26 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </div>
+  </div><br>
   <div class="field">
-    <%= f.label :narrative %><br>
+    <%= f.label :narrative %>
     <%= f.text_area :narrative %>
-  </div>
+  </div><br>
   <div class="field">
-    <%= f.label :place %><br>
+    <%= f.label :place %>
     <%= f.text_field :place %>
-  </div>
+  </div><br>
   <div class="field">
-    <%= f.label :period %><br>
+    <%= f.label :period %>
     <%= f.text_field :period %>
-  </div>
+  </div><br>
   <div class="field">
-    <%= f.label :chapter_id %><br>
+    <%= f.label :chapter_id %>
     <%= f.number_field :chapter_id %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <br/>
+  <%= f.submit "Create scene", class: "btn btn-large btn-primary" %>
 <% end %>

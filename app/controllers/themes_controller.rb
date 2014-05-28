@@ -17,6 +17,7 @@ class ThemesController < ApplicationController
   # GET /themes/new
   def new
     @theme = Theme.new
+    @anecdotes = Anecdote.all
   end
 
   # GET /themes/1/edit

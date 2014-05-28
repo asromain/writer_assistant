@@ -1,0 +1,8 @@
+<div class="contenu">
+  <h2>List of scenes available</h2>
+  <ul>  
+    <%- @scenes.each do |scene| %>
+      <li>N°<%= scene.id %> : <%= scene.name %></li>
+    <%- end %>
+  </ul>
+</div>
