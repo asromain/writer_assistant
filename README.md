@@ -29,3 +29,7 @@ J'ai créé un modèle user qui sera admin. On doit créer l'utilisateur via rai
 Il doit se connecter pour accéder aux différentes pages de créations de chapitres, anecdotes, scenes, themes, et personnages.
 
 Après l'ajout d'informations dans la base de donnée, ces dernières sont listées dans des tableaux. L'action show permet de voir toutes les autres dépendances : par exemple pour un chapitre permettre de lister ses anecdotes et scenes correspondantes. L'action edit permet d'éditer les différentes données enregistrées et destroy permet de les effacer.
+
+============================
+
+Problèmes rencontrés : relations has_and_belongs_to_many pour scenes et characters. Je comptais aussi limiter totalement l'accès aux différentes pages d'édition pour l'utilisateur non connectés.
